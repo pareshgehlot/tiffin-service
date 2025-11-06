@@ -79,7 +79,11 @@
         }
 
         var normalized = pathWithinBase.endsWith('/') ? pathWithinBase : pathWithinBase + '/';
-        window.location.replace(basePath + normalized + search + hash);
+        var target = basePath + normalized;
+        if (!target.endsWith('/')) {
+          target += '/';
+        }
+        window.location.replace(target + 'index.html' + search + hash);
       })();
     </script>
   </body>
