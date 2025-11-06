@@ -68,22 +68,22 @@
         }
 
         if (!path.startsWith(basePath)) {
-          window.location.replace(basePath + '/index.html' + search + hash);
+          window.location.replace(basePath + '/' + search + hash);
           return;
         }
 
         var pathWithinBase = path.slice(basePath.length);
         if (pathWithinBase === '' || pathWithinBase === '/') {
-          window.location.replace(basePath + '/index.html' + search + hash);
+          window.location.replace(basePath + '/' + search + hash);
           return;
         }
 
         var normalized = pathWithinBase.endsWith('/') ? pathWithinBase : pathWithinBase + '/';
         var target = basePath + normalized;
-        if (!target.endsWith('/')) {
-          target += '/';
-        }
-        window.location.replace(target + 'index.html' + search + hash);
+
+        // Visiting a route like /login should resolve to /login/ so that GitHub Pages
+        // serves the static directory's index.html automatically.
+        window.location.replace(target + search + hash);
       })();
     </script>
   </body>
