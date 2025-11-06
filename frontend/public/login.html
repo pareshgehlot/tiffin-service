@@ -2,10 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=/tiffin-service/login/" />
+    <meta http-equiv="refresh" content="0; url=/tiffin-service/login/index.html" />
     <title>Redirecting…</title>
     <script>
-      window.location.replace('/tiffin-service/login/' + window.location.search + window.location.hash);
+      (function () {
+        var search = window.location.search || '';
+        var hash = window.location.hash || '';
+        window.location.replace('/tiffin-service/login/index.html' + search + hash);
+      })();
     </script>
   </head>
   <body></body>

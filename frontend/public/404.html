@@ -63,16 +63,23 @@
         var targetElement = document.getElementById('redirect-target');
 
         if (targetElement) {
-          targetElement.textContent = path.replace(basePath, '') || '/';
+          var withoutBase = path.startsWith(basePath) ? path.slice(basePath.length) || '/' : path;
+          targetElement.textContent = withoutBase;
         }
 
-        if (path.startsWith(basePath) && !path.endsWith('/')) {
-          window.location.replace(path + '/' + search + hash);
+        if (!path.startsWith(basePath)) {
+          window.location.replace(basePath + '/index.html' + search + hash);
           return;
         }
 
-        var fallback = basePath + '/' + search + hash;
-        window.location.replace(fallback);
+        var pathWithinBase = path.slice(basePath.length);
+        if (pathWithinBase === '' || pathWithinBase === '/') {
+          window.location.replace(basePath + '/index.html' + search + hash);
+          return;
+        }
+
+        var normalized = pathWithinBase.endsWith('/') ? pathWithinBase : pathWithinBase + '/';
+        window.location.replace(basePath + normalized + 'index.html' + search + hash);
       })();
     </script>
   </body>
