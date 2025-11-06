@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  backend:
+    build: ./backend
+    command: npm run start:dev
+    ports:
+      - '3001:3000'
+    env_file:
+      - backend/.env.example
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - mongo
+  frontend:
+    build: ./frontend
+    command: npm run dev
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend:/app
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:3001
+  mongo:
+    image: mongo:7
+    restart: always
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
