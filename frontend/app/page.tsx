@@ -31,10 +31,10 @@ export default function HomePage() {
               Discover curated weekly menus, manage your dietary preferences, and enjoy doorstep delivery throughout the GTA.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link className="rounded-full bg-primary px-6 py-3 text-white shadow-lg shadow-primary/30" href="/menu/">
+              <Link className="rounded-full bg-primary px-6 py-3 text-white shadow-lg shadow-primary/30" href="/menu">
                 Explore Menu
               </Link>
-              <Link className="rounded-full border border-primary px-6 py-3 text-primary" href="/plans/">
+              <Link className="rounded-full border border-primary px-6 py-3 text-primary" href="/plans">
                 View Plans
               </Link>
             </div>
@@ -85,11 +85,11 @@ export default function HomePage() {
             <p className="mt-2 text-sm text-slate-300">Sign up in minutes and schedule your first delivery for tomorrow.</p>
           </div>
           <div className="flex gap-3">
-            <Link href="/register/" className="rounded-full bg-white px-6 py-3 text-slate-900">
+            <Link href="/register" className="rounded-full bg-white px-6 py-3 text-slate-900">
               Create Account
             </Link>
-            <Link href="/login/" className="rounded-full border border-white px-6 py-3 text-white">
-              Sign In
+            <Link href="/login" className="rounded-full border border-white px-6 py-3 text-white">
+              Sign in
             </Link>
           </div>
         </div>
