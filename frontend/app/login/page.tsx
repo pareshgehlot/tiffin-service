@@ -32,7 +32,7 @@ export default function LoginPage() {
         </button>
       </form>
       <p className="mt-4 text-sm text-slate-600 dark:text-slate-300">
-        New here? <Link href="/register/" className="text-primary">Create an account</Link>
+        New here? <Link href="/register" className="text-primary">Create an account</Link>
       </p>
     </div>
   );

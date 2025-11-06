@@ -49,7 +49,7 @@ export default function OrderPage() {
           />
         </div>
         <div className="flex items-center justify-between">
-          <Link href="/checkout/" className="rounded-full border border-primary px-5 py-2 text-primary">
+          <Link href="/checkout" className="rounded-full border border-primary px-5 py-2 text-primary">
             Save & Continue Later
           </Link>
           <button type="submit" className="rounded-full bg-primary px-6 py-3 text-white">
