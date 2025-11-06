@@ -33,7 +33,9 @@ async function bootstrap() {
   usersService.create({
     firstName: 'Demo',
     lastName: 'Customer',
-    email: 'demo@tiffin.com'
+    email: 'demo@tiffin.com',
+    password: 'DemoPassword1!',
+    role: 'customer'
   });
 
   console.log('Seed data loaded');

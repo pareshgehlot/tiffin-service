@@ -1,3 +1,5 @@
+import { API_BASE_URL } from '../../../lib/config';
+
 const analytics = [
   { label: 'Daily Sales', value: '$1,840', trend: '+12%' },
   { label: 'Active Orders', value: '128', trend: '+5%' },
@@ -32,6 +34,7 @@ export default function AdminDashboardPage() {
               <li>• Payment gateways: Stripe (live), Interac (manual confirmation)</li>
               <li>• Notifications: Twilio SMS + SendGrid email templates</li>
               <li>• Integrations: Google Maps, Cloudinary, Firebase push</li>
+              <li>• API base URL: {API_BASE_URL}</li>
             </ul>
           </div>
         </div>
